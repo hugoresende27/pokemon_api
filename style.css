@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+    background: #efefbb;
+    background: linear-gradient(to right, #d4d3dd, #efefbb);
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+h1 {
+  letter-spacing: 3px;
+}
+
+.poke-main{
+    display: flex;
+    flex-wrap: wrap;    /*flex-wrap:wrap torna o conteudo responsivo conforme o tamanho da janela*/
+    align-items: space-between;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.pokemon {
+    background-color: #eee;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(100,100,100,0.5);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.pokemon .img-conteudo{
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    text-align: center;
+}
+.pokemon .img-conteudo img {
+    max-width: 90%;
+    margin-top: 20px;
+}
+
+.pokemon .info {
+    margin-top: 20px;
+}
+
+.pokemon .info .numero {
+    background-color: rgba(0,0,0,0.1);
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 0.8em;
+}
+
+.pokemon .info .nome {
+    margin: 15px 0 7px;
+    letter-spacing: 1px;
+}
+/*///////////////MEDIA QUERYS////////////////////////////////////////////////////////////////////*/
+
+@media(max-width: 480px)        /*para ecras mais pequenos*/
+{
+    body{
+        overflow:visible;
+    }
+
+    footer 
+    {
+        display: none;
+    };
+
+}
+
+@media (max-width: 800px)
+{
+    body{
+        overflow:visible;
+    }
+    footer 
+    {
+        /* display: none; */
+    };
+  
+
+}
+
+
+/*estilos do footer */
+
+footer{
+    font-size: 0.8rem;
+    color: #fff;
+    font-family:'Inconsolata',sans-serif ;
+    text-align: center;
+    /* border: 1px solid var(--charcoal-cor); */
+    position: absolute;
+     bottom: 0rem; 
+     left: 50%; 
+    transform: translate(-50%, -50%);
+    font-weight: 500;
+    padding: 0rem 0.9rem;
+}
+
+footer:hover{
+    background-color: #333;
+    color: #fff;
+    border-radius: 20px;
+    transform: translate(-50%,-50%) scale(1.2);
+}
+footer:hover a{
+    color: yellow;
+    font-weight: 700;
+}
+footer:hover a:hover{
+    font-weight: 900;
+    color:greenyellow;
+}
+
+footer a{
+   color: #fff;  /*cor dos links a preto*/
+   text-decoration: none;     /*retira o sublinhado dos links*/
+  
+}
+
+footer a:hover{
+    color: var(--gold-cor);
+}
+
+
+
+
