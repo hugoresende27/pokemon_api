@@ -51,11 +51,11 @@ const criarCartaPoke = (pokemon) => {
     const tipo = main_tipos.find(type=> poke_tipos.indexOf(type)> -1)//tipo vai retornar o tipo , se não retornar tipo retorna -1
     //console.log (poke_tipos)
     //console.log (tipo)
-
+    const habil = pokemon.abilities.ability
     const cor = colors[tipo]
-
+    console.log(habil)
     pokeEl.style.backgroundColor = cor
-
+    
     const pokemonInnerHTML = `
     
             <div class="img-conteudo">
@@ -65,6 +65,7 @@ const criarCartaPoke = (pokemon) => {
                 <span class="numero">${id}</span>
                 <h3 class="nome">${nome}</h3>
                 <small class="tipo">Tipo: <span>${tipo}</span></small>
+                
             </div>
     `
 
