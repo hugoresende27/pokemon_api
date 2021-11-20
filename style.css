@@ -64,6 +64,14 @@ h1 {
     margin: 15px 0 7px;
     letter-spacing: 1px;
 }
+.pokemon .info .xp {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 0;
+   
+}
+h5{
+    margin: 0;
+}
 /*///////////////MEDIA QUERYS////////////////////////////////////////////////////////////////////*/
 
 @media(max-width: 480px)        /*para ecras mais pequenos*/

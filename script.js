@@ -34,9 +34,8 @@ const getPoke = async (id) => {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`
     const res = await fetch(url)
     const dados = await res.json()
-    //console.log(dados)//vai fazer o console log dos arrays de cada pokemon ate 150
+    console.log(dados)//vai fazer o console log dos arrays de cada pokemon ate 150
     criarCartaPoke(dados)
-
 }
 
 const criarCartaPoke = (pokemon) => {
@@ -45,15 +44,15 @@ const criarCartaPoke = (pokemon) => {
 
     const nome = pokemon.name[0].toUpperCase() + pokemon.name.slice(1)//para ir buscar o nome à API e colocar tudo em maiúsculas [0]para ser a primeira letra apenas em upperCase e .slice(1)para escrever a partir do index 1 em minusculas
     const id = pokemon.id.toString().padStart(3, '#0')//vai buscar os id's, converte para String e depois padStar(3,'0', vai escrever 001, 002, 003, 004)
-
+    const baseXP = pokemon.base_experience
     
     const poke_tipos = pokemon.types.map(type => type.type.name) //poke_tipos vai receber o mapa dos tipos do pokemon
     const tipo = main_tipos.find(type=> poke_tipos.indexOf(type)> -1)//tipo vai retornar o tipo , se não retornar tipo retorna -1
     //console.log (poke_tipos)
-    //console.log (tipo)
-    const habil = pokemon.abilities.ability
+    //console.log (baseXP)
+    
     const cor = colors[tipo]
-    console.log(habil)
+    
     pokeEl.style.backgroundColor = cor
     
     const pokemonInnerHTML = `
@@ -64,6 +63,8 @@ const criarCartaPoke = (pokemon) => {
             <div class="info">
                 <span class="numero">${id}</span>
                 <h3 class="nome">${nome}</h3>
+                <h5>XP</h5>
+                <h3 class="xp">${baseXP}</h3>
                 <small class="tipo">Tipo: <span>${tipo}</span></small>
                 
             </div>
